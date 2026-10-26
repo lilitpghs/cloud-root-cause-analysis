@@ -1,0 +1,11 @@
+# Initial dependency list for the research notebook.
+# Compatibility has not been verified end-to-end; legacy notebook APIs may need adjustment.
+numpy
+pandas
+scikit-learn
+matplotlib
+xgboost
+shap
+lime
+eli5
+tensorflow
