@@ -2,7 +2,7 @@
 # Cloud Application Root Cause Analysis
 
 ## Overview
-This project investigates patterns associated with erroneous behaviour in complex cloud applications using application trace data and analytical modelling.
+This project investigates application trace data to identify patterns associated with errors, compare analytical approaches and interpret the factors influencing model predictions. The findings can support root cause investigation, although the identified patterns are not independently verified as actual causes.
 
 ## Objectives
 - Structure application trace data for analysis.
@@ -17,7 +17,7 @@ The original application-trace dataset and intermediate files are not publicly a
 Open `cloud_analytics.ipynb` to explore the analytical workflow and any saved visual outputs.
 
 ## Tools
-Python, pandas, scikit-learn, XGBoost, SHAP, and data visualisation.
+Python, pandas, scikit-learn, XGBoost, SHAP and data visualisation.
 
 ## Limitations
-The analysis identifies patterns associated with traces labelled as erroneous; it does not independently establish the actual operational root cause.
+The analysis identifies patterns associated with traces labelled as erroneous. These patterns and model explanations do not, by themselves, establish the actual operational root cause.
