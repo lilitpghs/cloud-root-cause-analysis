@@ -19,5 +19,4 @@ Open `cloud_analytics.ipynb` to explore the analytical workflow and any saved vi
 ## Tools
 Python, pandas, scikit-learn, XGBoost, SHAP and data visualisation.
 
-## Limitations
-The analysis identifies patterns associated with traces labelled as erroneous. These patterns and model explanations do not, by themselves, establish the actual operational root cause.
+
