@@ -1,6 +1,6 @@
 # Explainable Root Cause Analysis for Cloud Applications
 
-**Which parts of a cloud application are linked to failed requests, and can explainable AI point engineers to them?**
+**Which parts of a cloud application are linked to failed requests and can explainable AI point engineers to them?**
 
 *Industry project with VMware, 2022*
 
@@ -12,9 +12,9 @@
 
 ## The problem
 
-Modern cloud applications are built from dozens of small services. One user request can pass through many of them, and when it fails, the error often shows up far from where the problem started. Engineers then have to read through hundreds of operations per request to find the cause.
+Modern cloud applications are built from dozens of small services. One user request can pass through many of them and when it fails, the error often shows up far from where the problem started. Engineers then have to read through hundreds of operations per request to find the cause.
 
-This project asks: **can a model learn which parts of the application are associated with failed requests, and can explainable AI make that visible so engineers know where to look first?**
+This project asks: **can a model learn which parts of the application are associated with failed requests and can explainable AI make that visible so engineers know where to look first?**
 
 ## The data
 
@@ -78,14 +78,8 @@ The data is confidential and is not included in this repository.
 1. **Start incident investigations in the ad-selector service**, specifically `compare-edge-context`, `post-process-ads` and its user-db calls.
 2. **Check the canary release.** The service name contains *canary*, which usually means a new version tested on a small share of traffic. If failures cluster there, the new release is the first thing to check.
 3. **Look at the user-db call pattern.** Repetition counts and durations of `getuserinfostruct` matter in the richer models, which can point to retries or slow lookups.
-4. **Use the pipeline as a triage tool** to rank the operations most associated with a new batch of failures, instead of reading traces by hand.
+4. **Use the pipeline as a prioritization tool** to rank the operations most associated with a new batch of failures, instead of reading traces by hand.
 
-## Limitations
-
-- **Association, not cause.** The models show where failures are concentrated, not why they happen. The leads need to be confirmed by engineers.
-- **The label comes from the same traces.** A trace is failed if one of its spans is flagged, so the model partly learns where errors are recorded. That is useful for locating problems and also explains the near-perfect scores.
-- **One snapshot of one application.** Results may not hold for other periods, services or releases.
-- **Not reproducible from this repository.** The data is confidential, and the notebook was run interactively in 2022. The code is shared so the method is transparent.
 
 ## Repository structure
 
